@@ -88,7 +88,6 @@
 
 <script>
     (async function () {
-
         const table = document.getElementById('docs-table');
 
         if (!table) {
@@ -98,8 +97,9 @@
         const tbody = table.querySelector('tbody');
 
         try {
-
-            const response = await fetch('https://aster451.aster451-template.workers.dev/docs/docs.json');
+            const response = await fetch(
+                'https://aster451.aster451-template.workers.dev/docs/docs.json'
+            );
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
@@ -110,30 +110,34 @@
             tbody.innerHTML = '';
 
             docs.forEach(doc => {
-
                 const tr = document.createElement('tr');
 
+                // タイトル
                 const title = document.createElement('td');
-                const link = document.createElement('a');
+                title.textContent = doc.title;
 
-                link.href = doc.path;
-                link.textContent = doc.title;
-
-                title.appendChild(link);
-
+                // URL
                 const path = document.createElement('td');
-                path.textContent = doc.path;
+
+                const link = document.createElement('a');
+                link.className = 'url';
+                link.href = doc.path;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = doc.path;
+
+                path.appendChild(link);
 
                 tr.appendChild(title);
                 tr.appendChild(path);
 
                 tbody.appendChild(tr);
-
             });
-
         } catch (error) {
-
-            console.error('ドキュメント一覧の読み込みに失敗しました:', error);
+            console.error(
+                'ドキュメント一覧の読み込みに失敗しました:',
+                error
+            );
 
             tbody.innerHTML = `
             <tr>
@@ -142,9 +146,7 @@
                 </td>
             </tr>
         `;
-
         }
-
     })();
 </script>
 

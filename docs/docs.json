@@ -1,10 +1,6 @@
 [
     {
-        "path": "docs/index.html",
-        "title": "Aster451 Template Docs"
-    },
-    {
-        "path": "docs/licence.html",
+        "path": "https://aster451.aster451-template.workers.dev/docs/licence",
         "title": "Aster451 Template Licence"
     }
 ]
