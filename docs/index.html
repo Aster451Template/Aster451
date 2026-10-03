@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aster451 Template Docs</title>
+    <link rel="stylesheet" href="./aster451.css">
+    <script src="./aster451.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#content">本文へスキップ</a>
+
+    <header>
+        <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <h1>Aster451 Template Docs</h1>
+    </header>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <nav class="drawer" id="drawer" aria-label="メニュー">
+
+        <h2 class="drawer-title">Aster451 Template Docs</h2>
+
+        <ul>
+            <li>
+                <a href="#auto">Docs 自動取得</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="content">
+
+        <h1>Aster451 Template Docs</h1>
+
+        <p>
+            Aster451 Templateのブログ兼開発日記系のドキュメントです。
+        </p>
+
+        <p>
+            Aster451 Templateのホームページはこちらから。
+        </p>
+        <a href="./">
+            <button class="button">
+                → Aster451 Template
+            </button>
+        </a>
+
+        <section id="auto">
+
+            <h2 class="theme-title">Docs 自動取得</h2>
+
+            <table id="docs-table">
+                <thead>
+                    <tr>
+                        <th>タイトル</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="2">読み込み中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+    <footer>
+        <small>
+            Aster451 Template
+        </small>
+    </footer>
+</body>
+
+<script>
+    (async function () {
+
+        const table = document.getElementById('docs-table');
+
+        if (!table) {
+            return;
+        }
+
+        const tbody = table.querySelector('tbody');
+
+        try {
+
+            const response = await fetch('./docs/docs.json');
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            const docs = await response.json();
+
+            tbody.innerHTML = '';
+
+            docs.forEach(doc => {
+
+                const tr = document.createElement('tr');
+
+                const title = document.createElement('td');
+                const link = document.createElement('a');
+
+                link.href = doc.path;
+                link.textContent = doc.title;
+
+                title.appendChild(link);
+
+                const path = document.createElement('td');
+                path.textContent = doc.path;
+
+                tr.appendChild(title);
+                tr.appendChild(path);
+
+                tbody.appendChild(tr);
+
+            });
+
+        } catch (error) {
+
+            console.error('ドキュメント一覧の読み込みに失敗しました:', error);
+
+            tbody.innerHTML = `
+            <tr>
+                <td colspan="2">
+                    ドキュメント一覧を読み込めませんでした。
+                </td>
+            </tr>
+        `;
+
+        }
+
+    })();
+</script>
+
+</html>

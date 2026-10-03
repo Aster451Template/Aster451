@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aster451 Template</title>
+	<link rel="stylesheet" href="./aster451.css">
+	<script src="./aster451.js" defer></script>
+</head>
+
+<body>
+
+	<a class="skip-link" href="#content">本文へスキップ</a>
+
+	<header>
+		<button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<h1>Aster451 Template</h1>
+	</header>
+
+	<div class="backdrop" id="backdrop"></div>
+
+	<nav class="drawer" id="drawer" aria-label="メニュー">
+
+		<h2 class="drawer-title">テーマ</h2>
+
+		<ul>
+			<li>
+				<a href="#about">Aster451について</a>
+			</li>
+			<li>
+				<a href="#colors">テーマカラー</a>
+			</li>
+			<li>
+				<a href="#usage">使い方</a>
+			</li>
+			<li>
+				<a href="#fonts">フォント</a>
+			</li>
+		</ul>
+
+		<h2 class="drawer-title">例</h2>
+
+		<ul>
+			<li>
+				<a href="#ex-hr">水平線・見出し</a>
+			</li>
+			<li>
+				<a href="#ex-tab">タブ</a>
+			</li>
+			<li>
+				<a href="#ex-quote">引用・コード</a>
+			</li>
+			<li>
+				<a href="#ex-table">テーブル</a>
+			</li>
+			<li>
+				<a href="#ex-parts">ボタン・カード・通知</a>
+			</li>
+			<li>
+				<a href="#ex-box">囲みボックス</a>
+			</li>
+			<li>
+				<a href="#ex-image">画像テスト</a>
+			</li>
+			<li>
+				<a href="#ex-header">ヘッダーとメニュー</a>
+			</li>
+		</ul>
+
+		<h2 class="drawer-title">その他</h2>
+
+		<ul>
+			<li>
+				<a href="#code">テーマコード</a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<main id="content">
+
+		<h1>Aster451 Template</h1>
+
+		<p class="text-small">
+			Accessible Styling &amp; Typography for Elegant Responsive Web
+			- 451 Standard
+		</p>
+
+		<p>
+			紙のような読みやすさや親しみやすさを、
+			現代のWebページ向けのスタイルとして再構成するための
+			CSSテーマです。
+		</p>
+
+		<!-- About -->
+
+		<section id="about">
+
+			<h2 class="theme-title">Aster451について</h2>
+
+			<p>
+				<strong>Aster451</strong> は
+				<strong>Accessible Styling &amp; Typography for Elegant Responsive Web - 451 Standard</strong>
+				の略称です。
+			</p>
+
+			<p>
+				読みやすい文字組み、落ち着いた配色、
+				適切な余白、レスポンシブなレイアウトを組み合わせ、
+				特別なデザイン知識がなくても扱いやすい
+				Webページの基礎スタイルを提供します。
+			</p>
+
+			<p>
+				「451」は、Ray Bradbury の
+				<cite>Fahrenheit 451</cite>
+				に登場する紙というモチーフを、
+				Web上のタイポグラフィとスタイリングへ
+				控えめに取り入れたものです。
+			</p>
+
+			<p>
+				Aster451そのものは紙を模倣することを目的とせず、
+				紙媒体が持つ読みやすさや親しみやすさを
+				現代的なWebデザインへ置き換えることを目的としています。
+			</p>
+
+			<p>
+				このテーマは、個人・商用を問わず無料で使用できます。Aster451 Templateのドキュメントページ"Aster451 Template Docs"・ライセンスは以下のボタンから。
+			</p>
+			<a href="./docs">
+				<button class="button button-outline">
+					→ Aster451 Template Docs
+				</button>
+			</a>
+			<a href="./docs/licence">
+				<button class="button">
+					→ Aster451 Template LICENCE
+				</button>
+			</a>
+
+		</section>
+
+		<hr>
+
+		<!-- Theme Colors -->
+
+		<section id="colors">
+
+			<h2 class="theme-title">テーマカラー</h2>
+
+			<p>
+				色名 / 変数名 / 値 の順に表示します。
+			</p>
+
+			<div class="swatches">
+
+				<div class="swatch" style="--c:#29274c">
+					<b>Midnight Indigo</b>
+					<code>
+                        --first-color<br>
+                        #29274c · 41, 39, 76
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#7e52a0">
+					<b>Aster Violet</b>
+					<code>
+                        --second-color<br>
+                        #7e52a0 · 126, 82, 160
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#94849B">
+					<b>Dusty Lilac</b>
+					<code>
+                        --third-color<br>
+                        #94849B · 148, 132, 155
+                    </code>
+				</div>
+
+				<div class="swatch dark-text" style="--c:#f1f1f1">
+					<b>Paper White</b>
+					<code>
+                        --background-color<br>
+                        #f1f1f1 · 241, 241, 241
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#091e05">
+					<b>Forest Ink</b>
+					<code>
+                        --text-color<br>
+                        #091e05 · 9, 30, 5
+                    </code>
+				</div>
+
+				<div class="swatch dark-text" style="--c:#DBE4EE">
+					<b>Mist Blue</b>
+					<code>
+                        --blockquote-code-color<br>
+                        #DBE4EE · 219, 228, 238
+                    </code>
+				</div>
+
+				<div class="swatch dark-text" style="--c:#CDCDCD">
+					<b>Light Ash</b>
+					<code>
+                        --blockquote-code-border-color<br>
+                        #CDCDCD · 205, 205, 205
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#2f6b3a">
+					<b>Moss</b>
+					<code>
+                        --success-color<br>
+                        #2f6b3a · 47, 107, 58
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#8a5a00">
+					<b>Amber Brown</b>
+					<code>
+                        --warning-color<br>
+                        #8a5a00 · 138, 90, 0
+                    </code>
+				</div>
+
+				<div class="swatch" style="--c:#9b2c3c">
+					<b>Garnet</b>
+					<code>
+                        --danger-color<br>
+                        #9b2c3c · 155, 44, 60
+                    </code>
+				</div>
+
+			</div>
+
+		</section>
+
+		<hr>
+
+		<!-- Usage -->
+
+		<section id="usage">
+
+			<h2 class="theme-title">使い方</h2>
+
+			<p>
+				このテーマを
+				<code class="blockquote-code">aster451.css</code>
+				として保存し、HTMLの
+				<code class="blockquote-code">&lt;head&gt;</code>
+				から読み込みます。
+			</p>
+
+			<div class="example">
+
+				<div class="demo">
+
+					<p>
+						HTMLから読み込む場合
+					</p>
+
+				</div>
+
+				<pre
+					class="blockquote-code"><code>&lt;link rel="stylesheet" href="https://example.com/css/aster451.css"&gt;</code></pre>
+
+			</div>
+
+			<div class="example">
+
+				<div class="demo">
+
+					<p>
+						CSSから読み込む場合
+					</p>
+
+				</div>
+
+				<pre class="blockquote-code"><code>@import url('https://example.com/css/aster451.css');</code></pre>
+
+			</div>
+
+			<p class="text-small">
+				※ URLをそのまま本文に書くときは
+				<code class="blockquote-code">class="url"</code>
+				を付けると等幅で表示されます。
+			</p>
+
+		</section>
+
+		<hr>
+
+		<!-- Fonts -->
+
+		<section id="fonts">
+
+			<h2 class="theme-title">フォント</h2>
+
+			<p>
+				見出しと本文は Zen Old Mincho、
+				ゴシック体は Noto Sans JP、
+				等幅は IBM Plex Mono です。
+			</p>
+
+			<div class="example">
+
+				<div class="demo">
+
+					<p class="main-font">
+						明朝体のサンプル Aa
+					</p>
+
+					<p class="gothic-font">
+						ゴシック体のサンプル Aa
+					</p>
+
+					<p class="monotype-font">
+						Monospace sample 0123
+					</p>
+
+				</div>
+
+				<pre class="blockquote-code"><code>&lt;p class="main-font"&gt;
+    明朝体のサンプル Aa
+&lt;/p&gt;
+
+&lt;p class="gothic-font"&gt;
+    ゴシック体のサンプル Aa
+&lt;/p&gt;
+
+&lt;p class="monotype-font"&gt;
+    Monospace sample 0123
+&lt;/p&gt;</code></pre>
+
+			</div>
+
+		</section>
+
+		<hr>
+
+		<!-- Examples -->
+
+		<section id="examples">
+
+			<h2 class="theme-title">例</h2>
+
+			<!-- Horizontal rule / headings -->
+
+			<div id="ex-hr">
+
+				<p>
+					水平線は
+					<code class="blockquote-code">&lt;hr&gt;</code>
+					で作ります。この文書の区切り線も水平線です。
+					見出しは h1 から h6 の6段階です。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<hr>
+
+						<h1>First Title</h1>
+						<h2>Second Title</h2>
+						<h3>Third Title</h3>
+						<h4>Fourth Title</h4>
+						<h5>Fifth Title</h5>
+						<h6>Sixth Title</h6>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;hr&gt;
+
+&lt;h1&gt;First Title&lt;/h1&gt;
+&lt;h2&gt;Second Title&lt;/h2&gt;
+&lt;h3&gt;Third Title&lt;/h3&gt;
+&lt;h4&gt;Fourth Title&lt;/h4&gt;
+&lt;h5&gt;Fifth Title&lt;/h5&gt;
+&lt;h6&gt;Sixth Title&lt;/h6&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Tabs -->
+
+			<div id="ex-tab">
+
+				<h3>タブ</h3>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="tabview-navset">
+
+							<ul class="tabview-nav" role="tablist">
+
+								<li>
+									<a>タブ1</a>
+								</li>
+
+								<li>
+									<a>タブ2</a>
+								</li>
+
+								<li>
+									<a>タブ3</a>
+								</li>
+
+							</ul>
+
+							<div class="tabview-content">
+
+								<div>
+									タブ1の内容です。
+								</div>
+
+								<div>
+									タブ2の内容です。
+								</div>
+
+								<div>
+									タブ3の内容です。
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="tabview-navset"&gt;
+
+    &lt;ul class="tabview-nav" role="tablist"&gt;
+
+        &lt;li&gt;
+            &lt;a&gt;タブ1&lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;a&gt;タブ2&lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;a&gt;タブ3&lt;/a&gt;
+        &lt;/li&gt;
+
+    &lt;/ul&gt;
+
+    &lt;div class="tabview-content"&gt;
+
+        &lt;div&gt;
+            タブ1の内容です。
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            タブ2の内容です。
+        &lt;/div&gt;
+
+        &lt;div&gt;
+            タブ3の内容です。
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Quote / code -->
+
+			<div id="ex-quote">
+
+				<h3>引用・コード</h3>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<blockquote class="blockquote">
+
+							This is a blockquote.
+
+							<blockquote class="blockquote">
+								Nested blockquote.
+							</blockquote>
+
+						</blockquote>
+
+						<p>
+							<code class="blockquote-code">
+                                This is a code block.
+                            </code>
+						</p>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;blockquote class="blockquote"&gt;
+
+    This is a blockquote.
+
+    &lt;blockquote class="blockquote"&gt;
+        Nested blockquote.
+    &lt;/blockquote&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+    &lt;code class="blockquote-code"&gt;
+        This is a code block.
+    &lt;/code&gt;
+&lt;/p&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Table -->
+
+			<div id="ex-table">
+
+				<h3>テーブル</h3>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="table-wrap">
+
+							<table>
+
+								<thead>
+
+									<tr>
+										<th>This is a</th>
+										<th>table</th>
+									</tr>
+
+								</thead>
+
+								<tbody>
+
+									<tr>
+										<td>You should know</td>
+										<td>how to make these</td>
+									</tr>
+
+									<tr>
+										<td>already</td>
+										<td></td>
+									</tr>
+
+								</tbody>
+
+							</table>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="table-wrap"&gt;
+
+    &lt;table&gt;
+
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;This is a&lt;/th&gt;
+                &lt;th&gt;table&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;You should know&lt;/td&gt;
+                &lt;td&gt;how to make these&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;already&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+
+        &lt;/tbody&gt;
+
+    &lt;/table&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Buttons / Cards / Alerts / Details -->
+
+			<div id="ex-parts">
+
+				<h3>
+					ボタン・カード・通知・アコーディオン
+				</h3>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="flex">
+
+							<button class="button">
+								Primary
+							</button>
+
+							<button class="button button-outline">
+								Outline
+							</button>
+
+							<button class="button" disabled>
+								Disabled
+							</button>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="flex"&gt;
+
+    &lt;button class="button"&gt;
+        Primary
+    &lt;/button&gt;
+
+    &lt;button class="button button-outline"&gt;
+        Outline
+    &lt;/button&gt;
+
+    &lt;button class="button" disabled&gt;
+        Disabled
+    &lt;/button&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="grid">
+
+							<article class="card">
+
+								<h3>カード1</h3>
+
+								<p>
+									.grid と .card で並べます。
+								</p>
+
+							</article>
+
+							<article class="card">
+
+								<h3>カード2</h3>
+
+								<p>
+									幅に応じて折り返します。
+								</p>
+
+							</article>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="grid"&gt;
+
+    &lt;article class="card"&gt;
+
+        &lt;h3&gt;カード1&lt;/h3&gt;
+
+        &lt;p&gt;
+            .grid と .card で並べます。
+        &lt;/p&gt;
+
+    &lt;/article&gt;
+
+    &lt;article class="card"&gt;
+
+        &lt;h3&gt;カード2&lt;/h3&gt;
+
+        &lt;p&gt;
+            幅に応じて折り返します。
+        &lt;/p&gt;
+
+    &lt;/article&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="alert alert-info" role="status">
+							<strong>お知らせ:</strong>
+							情報を伝えます。
+						</div>
+
+						<div class="alert alert-success" role="status">
+							<strong>成功:</strong>
+							保存しました。
+						</div>
+
+						<div class="alert alert-warning" role="alert">
+							<strong>注意:</strong>
+							内容を確認してください。
+						</div>
+
+						<div class="alert alert-danger" role="alert">
+							<strong>エラー:</strong>
+							保存に失敗しました。
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="alert alert-info" role="status"&gt;
+    &lt;strong&gt;お知らせ:&lt;/strong&gt;
+    情報を伝えます。
+&lt;/div&gt;
+
+&lt;div class="alert alert-success" role="status"&gt;
+    &lt;strong&gt;成功:&lt;/strong&gt;
+    保存しました。
+&lt;/div&gt;
+
+&lt;div class="alert alert-warning" role="alert"&gt;
+    &lt;strong&gt;注意:&lt;/strong&gt;
+    内容を確認してください。
+&lt;/div&gt;
+
+&lt;div class="alert alert-danger" role="alert"&gt;
+    &lt;strong&gt;エラー:&lt;/strong&gt;
+    保存に失敗しました。
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<details open>
+
+							<summary>
+								開閉できる項目
+							</summary>
+
+							<p>
+								&lt;details&gt; をそのまま装飾しています。
+							</p>
+
+						</details>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;details open&gt;
+
+    &lt;summary&gt;
+        開閉できる項目
+    &lt;/summary&gt;
+
+    &lt;p&gt;
+        &amp;lt;details&amp;gt; をそのまま装飾しています。
+    &lt;/p&gt;
+
+&lt;/details&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Boxes -->
+
+			<div id="ex-box">
+
+				<h3>囲みボックス</h3>
+
+				<p>
+					div の囲みは3種類です。
+					<code class="blockquote-code">box-note</code>
+					(帯付き)、
+					<code class="blockquote-code">box-memo</code>
+					(破線)、
+					<code class="blockquote-code">box-file</code>
+					(ゴシック体の資料風)。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="box box-note">
+
+							<div class="box-title">
+								ノート
+							</div>
+
+							<div class="box-body">
+
+								<p>
+									補足や注意を書く囲みです。
+								</p>
+
+							</div>
+
+						</div>
+
+						<div class="box box-memo">
+
+							<div class="box-title">
+								メモ
+							</div>
+
+							<div class="box-body">
+
+								<p>
+									ひとこと添えるときに使う、
+									破線の囲みです。
+								</p>
+
+							</div>
+
+						</div>
+
+						<div class="box box-file">
+
+							<div class="box-title">
+								FILE No. 451
+							</div>
+
+							<div class="box-body">
+
+								<p>
+									資料や記録のように見せたいときに使う、
+									ゴシック体の囲みです。
+								</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="box box-note"&gt;
+
+    &lt;div class="box-title"&gt;
+        ノート
+    &lt;/div&gt;
+
+    &lt;div class="box-body"&gt;
+        &lt;p&gt;
+            補足や注意を書く囲みです。
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="box box-memo"&gt;
+
+    &lt;div class="box-title"&gt;
+        メモ
+    &lt;/div&gt;
+
+    &lt;div class="box-body"&gt;
+        &lt;p&gt;
+            ひとこと添えるときに使う、
+            破線の囲みです。
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="box box-file"&gt;
+
+    &lt;div class="box-title"&gt;
+        FILE No. 451
+    &lt;/div&gt;
+
+    &lt;div class="box-body"&gt;
+        &lt;p&gt;
+            資料や記録のように見せたいときに使う、
+            ゴシック体の囲みです。
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Images -->
+
+			<div id="ex-image">
+
+				<h3>画像テスト</h3>
+
+				<p>
+					画像は
+					<code class="blockquote-code">figure</code>
+					で囲みます。
+					右寄せは回り込み、
+					<code class="blockquote-code">gallery</code>
+					は複数の画像を並べて表示します。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<figure class="figure">
+
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+								alt="Aster ageratoides の花" width="400" height="300" loading="lazy">
+
+							<figcaption>
+								図1: Aster ageratoides
+							</figcaption>
+
+						</figure>
+
+						<p class="text-small">
+
+							写真:
+							<a class="url" href="https://commons.wikimedia.org/wiki/File:Aster_ageratoides.jpg"
+								target="_blank" rel="noopener noreferrer">
+								Aster ageratoides.jpg
+							</a>
+							/
+							Author:
+							<a class="url" href="https://www.flickr.com/photos/24841050@N00" target="_blank"
+								rel="noopener noreferrer">
+								Juni
+							</a>
+							/
+							Wikimedia Commons /
+							<a class="url" href="https://creativecommons.org/licenses/by/2.0/" target="_blank"
+								rel="noopener noreferrer">
+								CC BY 2.0
+							</a>
+
+						</p>
+
+						<figure class="figure figure-right">
+
+							<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+								alt="Aster ageratoides の花" width="400" height="300" loading="lazy">
+
+							<figcaption>
+								右寄せ
+							</figcaption>
+
+						</figure>
+
+						<p>
+							右寄せの画像には、本文が回り込みます。
+							文章が長くなると、画像の左側に沿って流れます。
+							Aster451では、このような画像と本文の組み合わせも
+							自然に扱えることを想定しています。
+						</p>
+
+						<div class="gallery">
+
+							<figure class="figure">
+
+								<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+									alt="Aster ageratoides の花" loading="lazy">
+
+								<figcaption>
+									A
+								</figcaption>
+
+							</figure>
+
+							<figure class="figure">
+
+								<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+									alt="Aster ageratoides の花" loading="lazy">
+
+								<figcaption>
+									B
+								</figcaption>
+
+							</figure>
+
+							<figure class="figure">
+
+								<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+									alt="Aster ageratoides の花" loading="lazy">
+
+								<figcaption>
+									C
+								</figcaption>
+
+							</figure>
+
+						</div>
+
+						<p class="text-small">
+
+							写真:
+							<a class="url" href="https://commons.wikimedia.org/wiki/File:Aster_ageratoides.jpg"
+								target="_blank" rel="noopener noreferrer">
+								Aster ageratoides.jpg
+							</a>
+							/
+							Author:
+							<a class="url" href="https://www.flickr.com/photos/24841050@N00" target="_blank"
+								rel="noopener noreferrer">
+								Juni
+							</a>
+							/
+							Wikimedia Commons /
+							<a class="url" href="https://creativecommons.org/licenses/by/2.0/" target="_blank"
+								rel="noopener noreferrer">
+								CC BY 2.0
+							</a>
+
+						</p>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;figure class="figure"&gt;
+
+    &lt;img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+        alt="Aster ageratoides の花"
+        width="400"
+        height="300"
+        loading="lazy"
+    &gt;
+
+    &lt;figcaption&gt;
+        図1: Aster ageratoides
+    &lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;figure class="figure figure-right"&gt;
+
+    &lt;img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+        alt="Aster ageratoides の花"
+        width="400"
+        height="300"
+        loading="lazy"
+    &gt;
+
+    &lt;figcaption&gt;
+        右寄せ
+    &lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;div class="gallery"&gt;
+
+    &lt;figure class="figure"&gt;
+
+        &lt;img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+            alt="Aster ageratoides の花"
+            loading="lazy"
+        &gt;
+
+        &lt;figcaption&gt;
+            A
+        &lt;/figcaption&gt;
+
+    &lt;/figure&gt;
+
+    &lt;figure class="figure"&gt;
+
+        &lt;img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+            alt="Aster ageratoides の花"
+            loading="lazy"
+        &gt;
+
+        &lt;figcaption&gt;
+            B
+        &lt;/figcaption&gt;
+
+    &lt;/figure&gt;
+
+    &lt;figure class="figure"&gt;
+
+        &lt;img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Aster_ageratoides.jpg"
+            alt="Aster ageratoides の花"
+            loading="lazy"
+        &gt;
+
+        &lt;figcaption&gt;
+            C
+        &lt;/figcaption&gt;
+
+    &lt;/figure&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<p>
+					手元の画像をその場で確認できます
+					(ファイルは送信されません)。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<p>
+							<input type="file" id="img-test" accept="image/*">
+						</p>
+
+						<figure class="figure">
+
+							<img id="img-preview" alt="プレビュー" width="400" height="300">
+
+							<figcaption id="img-caption">
+								未選択
+							</figcaption>
+
+						</figure>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;input
+    type="file"
+    id="img-test"
+    accept="image/*"
+&gt;
+
+&lt;figure class="figure"&gt;
+
+    &lt;img
+        id="img-preview"
+        alt="プレビュー"
+        width="400"
+        height="300"
+    &gt;
+
+    &lt;figcaption id="img-caption"&gt;
+        未選択
+    &lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;script&gt;
+
+const pick = document.getElementById('img-test');
+
+pick.addEventListener('change', () =&gt; {
+
+    const f = pick.files[0];
+
+    if (!f) return;
+
+    const img =
+        document.getElementById('img-preview');
+
+    img.src = URL.createObjectURL(f);
+    img.alt = f.name;
+
+    document.getElementById('img-caption')
+        .textContent = f.name;
+
+});
+
+&lt;/script&gt;</code></pre>
+
+				</div>
+
+			</div>
+
+			<!-- Header / Menu -->
+
+			<div id="ex-header">
+
+				<h3>ヘッダーとハンバーガーメニュー</h3>
+
+				<p>
+					下のコードは、このページで使用している
+					ヘッダー、背景、メニューの実装です。
+					<code class="blockquote-code">&lt;body&gt;</code>
+					の先頭付近に配置します。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<header>
+
+							<button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"
+								aria-controls="drawer">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+
+							<h1>
+								Aster451 Template
+							</h1>
+
+						</header>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;header&gt;
+
+    &lt;button
+        class="menu-button"
+        type="button"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+        aria-controls="drawer"
+    &gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;h1&gt;
+        Aster451 Template
+    &lt;/h1&gt;
+
+&lt;/header&gt;
+
+&lt;div class="backdrop"&gt;&lt;/div&gt;
+
+&lt;nav
+    class="drawer"
+    aria-label="メニュー"
+&gt;
+
+    &lt;h2 class="drawer-title"&gt;
+        テーマ
+    &lt;/h2&gt;
+
+    &lt;ul&gt;
+
+        &lt;li&gt;
+            &lt;a href="#colors"&gt;
+                テーマカラー
+            &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;a href="#usage"&gt;
+                使い方
+            &lt;/a&gt;
+        &lt;/li&gt;
+
+    &lt;/ul&gt;
+
+&lt;/nav&gt;</code></pre>
+
+				</div>
+
+		</section>
+
+		<hr>
+
+		<!-- Theme code -->
+
+		<section id="code">
+
+			<h2 class="theme-title">
+				テーマコード
+			</h2>
+
+			<details>
+
+				<summary>
+					テーマコードを表示
+				</summary>
+
+				<h3>aster451.css</h3>
+
+				<pre class="blockquote-code"><code id="theme-css">読み込み中...</code></pre>
+
+				<h3>aster451.js</h3>
+
+				<pre class="blockquote-code"><code id="theme-js">読み込み中...</code></pre>
+
+			</details>
+
+		</section>
+
+	</main>
+
+	<footer>
+		<small>
+			Aster451 Template
+		</small>
+	</footer>
+
+	<script>
+		// テーマコードの自動表示
+
+		(async function () {
+
+			const cssCode = document.getElementById('theme-css');
+			const jsCode = document.getElementById('theme-js');
+
+			if (!cssCode || !jsCode) {
+				return;
+			}
+
+			try {
+
+				const [cssResponse, jsResponse] = await Promise.all([
+					fetch('./aster451.css'),
+					fetch('./aster451.js')
+				]);
+
+				if (!cssResponse.ok) {
+					throw new Error(
+						`aster451.css: HTTP ${cssResponse.status}`
+					);
+				}
+
+				if (!jsResponse.ok) {
+					throw new Error(
+						`aster451.js: HTTP ${jsResponse.status}`
+					);
+				}
+
+				const css = await cssResponse.text();
+				const js = await jsResponse.text();
+
+				cssCode.textContent = css.trim();
+				jsCode.textContent = js.trim();
+
+			} catch (error) {
+
+				console.error(
+					'Aster451 のテーマコード読み込みに失敗しました:',
+					error
+				);
+
+				cssCode.textContent =
+					'aster451.css を読み込めませんでした。\n\n' +
+					error.message;
+
+				jsCode.textContent =
+					'aster451.js を読み込めませんでした。\n\n' +
+					error.message;
+
+			}
+
+		})();
+	</script>
+
+</body>
+
+</html>
