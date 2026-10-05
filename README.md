@@ -1,6 +1,6 @@
 # Aster451
 
-**Accessible Styling & Typography for Elegant Responsive Web - 451 Standard**
+**Accessible Styling & Techniques for Expressive Representation Web-Template - 451 Standard**
 
 Aster451 は、Webページにおける**読みやすさ、親しみやすさ、落ち着いた配色、適切な余白、レスポンシブなレイアウト**をまとめた CSS テーマおよび JavaScript テンプレートです。
 
@@ -62,18 +62,18 @@ Aster451 は、以下のような要素を提供します。
 
 Aster451 では、以下のテーマカラーを CSS カスタムプロパティとして定義しています。
 
-| 名前              | CSS変数                            | 値         |
+| 名前 | CSS変数 | 値 |
 | --------------- | -------------------------------- | --------- |
-| Midnight Indigo | `--first-color`                  | `#29274c` |
-| Aster Violet    | `--second-color`                 | `#7e52a0` |
-| Dusty Lilac     | `--third-color`                  | `#94849B` |
-| Paper White     | `--background-color`             | `#f1f1f1` |
-| Forest Ink      | `--text-color`                   | `#091e05` |
-| Mist Blue       | `--blockquote-code-color`        | `#DBE4EE` |
-| Light Ash       | `--blockquote-code-border-color` | `#CDCDCD` |
-| Moss            | `--success-color`                | `#2f6b3a` |
-| Amber Brown     | `--warning-color`                | `#8a5a00` |
-| Garnet          | `--danger-color`                 | `#9b2c3c` |
+| Midnight Indigo | `--first-color` | `#29274c` |
+| Aster Violet | `--second-color` | `#7e52a0` |
+| Dusty Lilac | `--third-color` | `#94849B` |
+| Paper White | `--background-color` | `#f1f1f1` |
+| Forest Ink | `--text-color` | `#091e05` |
+| Mist Blue | `--blockquote-code-color` | `#DBE4EE` |
+| Light Ash | `--blockquote-code-border-color` | `#CDCDCD` |
+| Moss | `--success-color` | `#2f6b3a` |
+| Amber Brown | `--warning-color` | `#8a5a00` |
+| Garnet | `--danger-color` | `#9b2c3c` |
 
 テーマカラーを CSS 変数として扱うため、独自の配色へ変更することもできます。
 

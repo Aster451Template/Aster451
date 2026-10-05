@@ -1,6 +1,6 @@
 /* ============================================================
 	Aster451
-	Accessible Styling & Typography for Elegant Responsive Web
+	Accessible Styling & Techniques for Expressive Representation Web-Template
 	451 Standard
 
 	1. Tabview
