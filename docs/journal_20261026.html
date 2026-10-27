@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aster451 Docs - Journal_20261027</title>
+	<link rel="stylesheet" href="https://aster451.aster451-template.workers.dev/aster451.css">
+	<script src="https://aster451.aster451-template.workers.dev/aster451.js" defer></script>
+</head>
+
+<body>
+
+	<a class="skip-link" href="#content">本文へスキップ</a>
+
+	<header>
+		<button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<h1>Aster451 Docs - Journal_20261027</h1>
+	</header>
+
+	<div class="backdrop" id="backdrop"></div>
+
+	<nav class="drawer" id="drawer" aria-label="メニュー">
+
+		<h2 class="drawer-title">Aster451 Docs - Journal_20261027</h2>
+
+		<ul>
+			<li>
+				<a href="#journal">Journal_20261027</a>
+				<ul>
+					<li>
+						<a href="#updates">この日の更新一覧</a>
+					</li>
+					<li>
+						<a href="#toc-feature">目次(TOC)機能</a>
+					</li>
+					<li>
+						<a href="#new-themes">新しいテーマ</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</nav>
+
+	<main id="content">
+
+		<h1>Aster451 Docs - Journal_20261027</h1>
+
+		<p>
+			Aster451 Templateの日記的なドキュメント(2026年10月27日付)です。この日は、見出しから目次を自動生成する機能の追加と、新しいCSSテーマの実装を行いました。
+		</p>
+
+		<p>
+			Aster451 Templateのホームページはこちらから。
+		</p>
+		<a class="button" href="https://aster451.aster451-template.workers.dev/">
+			→ Aster451 Template
+		</a>
+
+		<div class="toc" toc-title="目次" toc-target="#content"></div>
+
+		<section id="journal">
+
+			<h2 class="theme-title">Journal_20261027</h2>
+			<p>
+				2026年10月27日は、Aster451 Templateにとって「使い勝手」と「見た目の幅」を広げた一日でした。
+				まず、ページの見出しから目次を自動で作る機能を、JavaScriptとすべてのテーマのCSSに組み込みました。
+				あわせて、テーマを4つ実装・調整しました。どのテーマにも同じ目次が使えます。
+				<br>
+				この日の方針として、グラデーションは使わず、色の面と文字のコントラストで見た目を作ることにしました。
+			</p>
+
+			<section id="updates">
+				<h3 class="theme-title">この日の更新一覧</h3>
+				<p>
+					2026年10月27日に行った作業の一覧です。
+				</p>
+
+				<div class="table-wrap">
+
+					<table>
+
+						<thead>
+
+							<tr>
+								<th>日付</th>
+								<th>区分</th>
+								<th>内容</th>
+								<th>対象</th>
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>機能追加</td>
+								<td>見出しから目次を自動生成する処理を追加</td>
+								<td><code class="blockquote-code">aster451.js</code></td>
+							</tr>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>テーマ</td>
+								<td>Dreamstyleを「パステルを主役に、高コントラストで少し端正」に調整</td>
+								<td><code class="blockquote-code">dreamstyle.css</code></td>
+							</tr>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>テーマ</td>
+								<td>Caffè Mocha(オフィス風のライトテーマ)を新規実装</td>
+								<td><code class="blockquote-code">caffemocha.css</code></td>
+							</tr>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>テーマ</td>
+								<td>Nighttime Electricity(ダークハイコントラスト)を新規実装</td>
+								<td><code class="blockquote-code">nighttimeelectricity.css</code></td>
+							</tr>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>テーマ</td>
+								<td>Supernova Remnant(Tokyo Night風)を新規実装</td>
+								<td><code class="blockquote-code">supernovaremnant.css</code></td>
+							</tr>
+
+							<tr>
+								<td>2026年10月27日</td>
+								<td>ドキュメント</td>
+								<td>各テーマのページに、目次の例セクションとメニュー項目を追加</td>
+								<td>各テーマの <code class="blockquote-code">.html</code></td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</div>
+			</section>
+
+			<section id="toc-feature">
+				<h3 class="theme-title">目次(TOC)機能</h3>
+				<p>
+					この日の最初の作業は、ページの見出しから目次を自動で作る機能でした。
+					最初は目次のテスト用ページに、JavaScriptとCSSを直接書いて試していました。
+					ただ、それだとテーマを変えたときに目次だけ元の配色のままになってしまいます。
+					そこで、まず <code class="blockquote-code">aster451.js</code> に処理を移し、
+					次に全テーマのCSSへスタイルを追加して、どのテーマでも使える形にしました。
+				</p>
+				<p>
+					使い方は、目次を置きたい場所に次の1行を書くだけです。
+				</p>
+
+				<div class="example">
+					<div class="demo">
+						<p>
+							目次を置く場合
+						</p>
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="toc" toc-title="目次"&gt;&lt;/div&gt;</code></pre>
+				</div>
+
+				<p>
+					できるようになったことは、次のとおりです。
+				</p>
+				<ul>
+					<li>
+						見出し(h2〜h6)から、「1」「1-1」のような階層つきの番号で目次を作る。階層が飛んでも「1-0-1」のようにはならない
+					</li>
+					<li>
+						<code class="blockquote-code">toc-target</code> で見出しを探す範囲を、
+						<code class="blockquote-code">toc-max-level</code> で深さを、
+						<code class="blockquote-code">section-level</code> で番号の開始値を指定できる
+					</li>
+					<li>
+						<code class="blockquote-code">data-toc-ignore</code> を付けた見出しは目次に出さない
+					</li>
+					<li>
+						スクロールに合わせて、いま読んでいる見出しを目次の中で強調する
+					</li>
+					<li>
+						色・角丸・フォントはテーマの変数から取るので、ライトにもダークにも合う。強調色は <code class="blockquote-code">--toc-accent</code> にまとめた
+					</li>
+				</ul>
+				<p>
+					このページの先頭にある目次も、この機能で作っています。
+				</p>
+			</section>
+
+			<section id="new-themes">
+				<h3 class="theme-title">新しいテーマ</h3>
+				<p>
+					もう一つの作業は、CSSテーマの実装です。どれも <code class="blockquote-code">aster451.css</code> の構成を土台にして、
+					色・フォント・形を変えています。既存のスタイルには手を入れず、末尾に「テーマ固有の上書き」を足す作り方にしました。
+				</p>
+
+				<div class="table-wrap">
+
+					<table>
+
+						<thead>
+
+							<tr>
+								<th>テーマ</th>
+								<th>イメージ</th>
+								<th>フォント</th>
+								<th>配色の要点</th>
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							<tr>
+								<td>Dreamstyle</td>
+								<td>パステルが主役。コントラストは高く、格式もあるテーマ</td>
+								<td>Zen Old Mincho / Noto Sans JP / IBM Plex Mono</td>
+								<td>パステルは面に使い、文字・罫線・ボタンには深いインディゴとプラム</td>
+							</tr>
+
+							<tr>
+								<td>Caffè Mocha</td>
+								<td>オフィスのように落ち着いた、読みやすいライトテーマ</td>
+								<td>BIZ UDPGothic / Zen Kaku Gothic New / IBM Plex Mono</td>
+								<td>ミルクフォームの背景 <code class="blockquote-code">#faf6f0</code>、ヘッダーはエスプレッソ色 <code
+										class="blockquote-code">#4a2c1c</code></td>
+							</tr>
+
+							<tr>
+								<td>Nighttime Electricity</td>
+								<td>ダークで高コントラスト</td>
+								<td>IBM Plex Sans JP / Chakra Petch / JetBrains Mono</td>
+								<td>背景 <code class="blockquote-code">#05070f</code>、文字 <code
+										class="blockquote-code">#f2f6ff</code>、シアンとイエローの差し色</td>
+							</tr>
+
+							<tr>
+								<td>Supernova Remnant</td>
+								<td>Tokyo Night風の、深い藍色の夜空</td>
+								<td>Noto Sans JP / Space Grotesk / Fira Code</td>
+								<td>背景 <code class="blockquote-code">#1a1b26</code>、青・紫・橙の差し色</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</div>
+
+				<h4>Dreamstyle</h4>
+				<p>
+					パステルカラーを大切にしながら、適度なハイコントラストと少しの格式を持たせたテーマです。
+					パステルの淡い色を文字に使うと読みにくいので、文字・罫線・ボタンの縁には深い色を使い、パステルは広い面に回しています。
+				</p>
+
+				<h4>Caffè Mocha</h4>
+				<p>
+					オフィスのような配色を目指しました。本文はユニバーサルデザインの書体で、背景と文字のコントラスト比は約15:1(計算値)です。
+					ヘッダーだけ濃いエスプレッソ色にして、ページの輪郭をはっきりさせました。
+				</p>
+
+				<h4>Nighttime Electricity</h4>
+				<p>
+					夜の画面でも読みやすいことを優先しました。コントラスト比は約19:1(計算値)です。
+					シアンやイエローのような明るい色を面に使うところでは、文字を白ではなく暗い色にして、読みやすさを保っています。
+				</p>
+
+				<h4>Supernova Remnant</h4>
+				<p>
+					Tokyo Nightのような深い藍色を土台に、超新星の残骸のような青・紫・橙を差し色にしました。
+					最初はグラデーションで飾っていましたが、使わない方針にしたので、単色の線と面に置き換えています。
+				</p>
+			</section>
+
+		</section>
+
+	</main>
+	<footer>
+		<small>
+			Aster451 Template &copy;2026- <a href="https://aster451.aster451-template.workers.dev/">Aster451
+				Template</a>
+		</small>
+		<small>
+			<b>Questions:</b> <a href="mailto://aster451.template@protonmail.com">E-mail</a> / <b>Issues:</b> <a
+				href="https://github.com/Aster451Template/Aster451/issues">GitHub</a>
+		</small>
+	</footer>
+</body>
+
+</html>

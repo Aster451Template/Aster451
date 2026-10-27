@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light">
+	<title>自動目次生成テスト | Aster451</title>
+
+	<link rel="stylesheet" href="https://aster451.aster451-template.workers.dev/aster451.css">
+	<script src="aster451.js" defer></script>
+
+	<style>
+		:root {
+			--toc-indigo: #29274c;
+			--toc-violet: #7e52a0;
+			--toc-muted: #6f6878;
+			--toc-paper: #f1f1f1;
+			--toc-border: #CDCDCD;
+			--toc-hover: #ebe5f1;
+			--toc-line: #d8c9e4;
+		}
+
+		/* ページ全体 */
+		body {
+			color: var(--toc-indigo);
+			line-height: 1.8;
+		}
+
+		.container {
+			width: min(100% - 2rem, 850px);
+			margin-inline: auto;
+			padding-block: 2rem 5rem;
+		}
+
+		#article h1,
+		#article h2,
+		#article h3,
+		#article h4,
+		#article h5,
+		#article h6 {
+			scroll-margin-top: 2rem;
+			overflow-wrap: anywhere;
+		}
+
+		#article h1 {
+			padding-bottom: 0.6rem;
+			border-bottom: 3px solid var(--toc-violet);
+		}
+
+		#article h2 {
+			margin-top: 3rem;
+			padding-bottom: 0.4rem;
+			border-bottom: 1px solid var(--toc-border);
+		}
+
+		#article h3 {
+			margin-top: 2rem;
+		}
+
+		/* 目次本体 */
+		.toc {
+			margin-block: 1rem 1.5rem;
+			padding: 1rem 1.25rem;
+			border: 1px solid #CDCDCD;
+			border-top: 3px solid #7e52a0;
+			border-radius: 0.65rem;
+			background: #f1f1f1;
+			color: #29274c;
+			box-shadow: 0 2px 8px rgb(41 39 76 / 6%);
+		}
+
+		/* 目次タイトル */
+		.toc .toc-title {
+			display: flex;
+			align-items: center;
+			gap: 0.7rem;
+			margin: 0 0 1rem;
+			padding-bottom: 0.8rem;
+			border-bottom: 1px solid var(--toc-border);
+			color: var(--toc-indigo);
+			font-size: 1.2rem;
+			font-weight: 700;
+			line-height: 1.5;
+		}
+
+		.toc .toc-title::before {
+			content: "";
+			display: block;
+			flex: 0 0 4px;
+			width: 4px;
+			height: 1.3em;
+			border-radius: 2px;
+			background: var(--toc-violet);
+		}
+
+		/* リストの標準番号を無効化 */
+		.toc .toc-list {
+			display: flex;
+			flex-direction: column;
+			gap: 0.15rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		/* 番号と見出しを別カラムに配置 */
+		.toc .toc-list li {
+			display: grid;
+			grid-template-columns: 7.5rem minmax(0, 1fr);
+			column-gap: 0.75rem;
+			align-items: start;
+			margin: 0;
+			padding: 0.25rem 0.6rem;
+		}
+
+		.toc .toc-list li::before {
+			content: attr(data-number);
+			position: static;
+			display: block;
+			padding-top: 0.05em;
+			color: var(--toc-violet);
+			font-family: "IBM Plex Mono", monospace;
+			font-size: 0.9em;
+			font-weight: 500;
+			font-variant-numeric: tabular-nums;
+			white-space: nowrap;
+		}
+
+		.toc .toc-list li a {
+			display: block;
+			min-width: 0;
+			color: var(--toc-indigo);
+			text-decoration: none;
+			overflow-wrap: anywhere;
+			transition: color 150ms ease;
+		}
+
+		/* ホバー・キーボード操作 */
+		.toc .toc-list li:hover {
+			background: var(--toc-hover);
+		}
+
+		.toc .toc-list li:hover::before {
+			color: var(--toc-violet);
+		}
+
+		.toc .toc-list li a:hover {
+			color: var(--toc-violet);
+		}
+
+		.toc .toc-list li a:focus-visible {
+			outline: 2px solid var(--toc-violet);
+			outline-offset: 3px;
+			border-radius: 2px;
+		}
+
+		/* 見出し階層 */
+		.toc .toc-level-h2 {
+			margin-left: 0 !important;
+		}
+
+		.toc .toc-level-h3 {
+			margin-left: 0.65rem !important;
+		}
+
+		.toc .toc-level-h4 {
+			margin-left: 1.3rem !important;
+		}
+
+		.toc .toc-level-h5 {
+			margin-left: 1.95rem !important;
+		}
+
+		.toc .toc-level-h6 {
+			margin-left: 2.6rem !important;
+		}
+
+		/* テスト情報 */
+		.test-info {
+			margin-block: 2rem;
+			padding: 1rem 1.25rem;
+			border-left: 3px solid var(--toc-violet);
+			background: #f8f6fa;
+		}
+
+		.test-info p:first-child {
+			margin-top: 0;
+		}
+
+		.test-info p:last-child {
+			margin-bottom: 0;
+		}
+
+		.status {
+			color: var(--toc-violet);
+			font-weight: 700;
+		}
+
+		code {
+			padding: 0.15rem 0.35rem;
+			border-radius: 0.25rem;
+			background: var(--toc-paper);
+		}
+
+		/* モバイル */
+		@media (max-width: 520px) {
+			.container {
+				width: min(100% - 1.25rem, 850px);
+				padding-block: 1rem 3rem;
+			}
+
+			.toc {
+				padding: 1rem 0.75rem;
+			}
+
+			.toc .toc-list li {
+				grid-template-columns: 5.5rem minmax(0, 1fr);
+				column-gap: 0.5rem;
+				padding: 0.4rem 0.35rem;
+				font-size: 0.92rem;
+			}
+
+			.toc .toc-level-h3 {
+				margin-left: 0.25rem !important;
+			}
+
+			.toc .toc-level-h4 {
+				margin-left: 0.5rem !important;
+			}
+
+			.toc .toc-level-h5 {
+				margin-left: 0.75rem !important;
+			}
+
+			.toc .toc-level-h6 {
+				margin-left: 1rem !important;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+
+			.toc .toc-list li,
+			.toc .toc-list li a {
+				transition: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<header>
+			<h1>HTML自動目次生成テスト</h1>
+			<p>
+				このページの見出しをJavaScriptで自動取得し、
+				目次を生成します。
+			</p>
+		</header>
+
+		<!-- 属性だけで目次を生成 -->
+		<div class="toc" toc-title="目次"></div>
+
+		<div class="test-info">
+			<p><strong>テスト内容</strong></p>
+			<ul>
+				<li>h2〜h6の自動取得</li>
+				<li>階層に応じた番号の生成</li>
+				<li>見出しIDの自動付与</li>
+				<li>目次から見出しへの移動</li>
+				<li>同名見出しの重複対策</li>
+			</ul>
+			<p class="status" id="toc-status">目次生成待機中...</p>
+		</div>
+
+		<main id="article">
+			<h1>記事タイトル</h1>
+			<p>この見出しは目次の番号付け対象外です。</p>
+
+			<h2>第1章：概要</h2>
+			<p>プロジェクトの概要を説明します。</p>
+
+			<h3>目的</h3>
+			<p>このシステムの目的を説明します。</p>
+
+			<h4>主な機能</h4>
+			<p>主な機能を紹介します。</p>
+
+			<h5>補足情報</h5>
+			<p>補足情報を記載します。</p>
+
+			<h6>詳細な注記</h6>
+			<p>最も深い階層の見出しです。</p>
+
+			<h2>第2章：実装方法</h2>
+			<p>実装方法を説明します。</p>
+
+			<h3>HTML</h3>
+			<p>HTMLで目次の表示領域を作ります。</p>
+
+			<h3>CSS</h3>
+			<p>CSSで目次の見た目を整えます。</p>
+
+			<h3>JavaScript</h3>
+			<p>JavaScriptで見出しを取得します。</p>
+
+			<h2>第3章：動作確認</h2>
+			<p>目次のリンクをクリックして移動できるか確認します。</p>
+
+			<h3>同名見出しテスト</h3>
+			<p>同じ見出し名を複数回使用した場合のテストです。</p>
+
+			<h3>同名見出しテスト</h3>
+			<p>この見出しにも一意のIDが付与されます。</p>
+
+			<h2>第4章：まとめ</h2>
+			<p>以上でテストは終了です。</p>
+
+			<h2 data-toc-ignore>目次に表示しない見出し</h2>
+
+			<div data-toc-ignore>
+				<h2>この見出しも除外</h2>
+			</div>
+		</main>
+	</div>
+
+	<script>
+		function generateTOC() {
+			const tocElements = document.querySelectorAll(".toc[toc-title]");
+
+			tocElements.forEach(toc => {
+				const headings = [
+					...document.querySelectorAll("h1, h2, h3, h4, h5, h6")
+				].filter(heading =>
+					heading.textContent.trim() &&
+					!heading.closest("[data-toc-ignore]")
+				);
+
+				const usedIds = new Set(
+					[...document.querySelectorAll("[id]")]
+						.map(element => element.id)
+						.filter(Boolean)
+				);
+
+				headings.forEach((heading, index) => {
+					if (heading.id) return;
+
+					const baseId =
+						heading.textContent.trim()
+							.normalize("NFKC")
+							.toLowerCase()
+							.replace(/[^\p{L}\p{N}]+/gu, "-")
+							.replace(/^-|-$/g, "")
+						|| `heading-${index + 1}`;
+
+					let id = baseId;
+					let suffix = 2;
+
+					while (usedIds.has(id)) {
+						id = `${baseId}-${suffix++}`;
+					}
+
+					heading.id = id;
+					usedIds.add(id);
+				});
+
+				toc.replaceChildren();
+
+				const title = document.createElement("div");
+				title.className = "toc-title";
+				title.textContent = toc.getAttribute("toc-title") || "目次";
+
+				const list = document.createElement("ol");
+				list.className = "toc-list";
+
+				const rawLevel = toc.getAttribute("section-level");
+				const parsedLevel = rawLevel === null ? 1 : Number(rawLevel);
+
+				const startLevel =
+					Number.isInteger(parsedLevel) && parsedLevel >= 0
+						? parsedLevel
+						: 1;
+
+				const counters = [];
+
+				headings.forEach(heading => {
+					const level = Number(heading.tagName.slice(1));
+
+					// h1は番号付けしない
+					if (level < 2) return;
+
+					const depth = level - 2;
+
+					while (counters.length <= depth) {
+						counters.push(0);
+					}
+
+					counters[depth]++;
+					counters.length = depth + 1;
+
+					const numbering = [
+						startLevel + counters[0] - 1,
+						...counters.slice(1)
+					].join("-");
+
+					const li = document.createElement("li");
+					li.className = `toc-level-h${level}`;
+					li.dataset.number = numbering;
+
+					const link = document.createElement("a");
+					link.href = `#${encodeURIComponent(heading.id)}`;
+					link.textContent = heading.textContent.trim();
+
+					li.appendChild(link);
+					list.appendChild(li);
+				});
+
+				if (list.children.length === 0) {
+					toc.hidden = true;
+					return;
+				}
+
+				toc.hidden = false;
+				toc.append(title, list);
+			});
+		}
+
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", generateTOC, {
+				once: true
+			});
+		} else {
+			generateTOC();
+		}
+	</script>
+</body>
+
+</html>

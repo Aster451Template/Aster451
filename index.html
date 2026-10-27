@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aster451 Template</title>
 	<link rel="stylesheet" href="https://aster451.aster451-template.workers.dev/aster451.css">
-	<script src="https://aster451.aster451-template.workers.dev/aster451.js" defer></script>
+	<script src="aster451.js" defer></script>
 </head>
 
 <body>
@@ -58,6 +58,9 @@
 			</li>
 			<li>
 				<a href="#ex-table">テーブル</a>
+			</li>
+			<li>
+				<a href="#ex-toc">目次</a>
 			</li>
 			<li>
 				<a href="#ex-parts">ボタン・カード・通知</a>
@@ -1178,7 +1181,161 @@ pick.addEventListener('change', () =&gt; {
 
 &lt;/script&gt;</code></pre>
 
+					<script src="localfile.js" defer></script>
 				</div>
+
+			</div>
+
+			<!-- Table of contents -->
+
+			<div id="ex-toc">
+
+				<h3>目次</h3>
+
+				<p>
+					<code class="blockquote-code">class="toc"</code>
+					の要素に
+					<code class="blockquote-code">toc-title</code>
+					属性を付けると、見出し（h2〜h6）から目次を自動生成します。
+					番号は階層に合わせて「1」「1-1」のように付きます。
+					ページ全体ではなく一部だけを対象にするときは、
+					<code class="blockquote-code">toc-target</code>
+					で範囲を指定します。
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="toc" toc-title="目次" toc-target="#toc-sample"></div>
+
+						<div id="toc-sample">
+
+							<h2>はじめに</h2>
+							<p>この見出しが目次の「1」になります。</p>
+
+							<h3>概要</h3>
+							<p>「1-1」になります。</p>
+
+							<h3>使い方</h3>
+							<p>「1-2」になります。</p>
+
+							<h4>属性</h4>
+							<p>「1-2-1」になります。</p>
+
+							<h2>おわりに</h2>
+							<p>「2」になります。</p>
+
+							<h2 data-toc-ignore>目次に出ない見出し</h2>
+							<p>data-toc-ignore を付けた見出しは除外されます。</p>
+
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="toc" toc-title="目次" toc-target="#toc-sample"&gt;&lt;/div&gt;
+
+&lt;div id="toc-sample"&gt;
+
+    &lt;h2&gt;はじめに&lt;/h2&gt;
+    &lt;h3&gt;概要&lt;/h3&gt;
+    &lt;h3&gt;使い方&lt;/h3&gt;
+    &lt;h4&gt;属性&lt;/h4&gt;
+    &lt;h2&gt;おわりに&lt;/h2&gt;
+
+    &lt;h2 data-toc-ignore&gt;目次に出ない見出し&lt;/h2&gt;
+
+&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<p>
+					深さと番号の開始値も指定できます。
+					次の例は h3 までを対象にし、番号を 5 から始めます。
+					（見出しは上の例と同じものを使っています）
+				</p>
+
+				<div class="example">
+
+					<div class="demo">
+
+						<div class="toc" toc-title="第5章の目次" toc-target="#toc-sample" toc-max-level="3"
+							section-level="5">
+						</div>
+
+					</div>
+
+					<pre class="blockquote-code"><code>&lt;div class="toc"
+     toc-title="第5章の目次"
+     toc-target="#toc-sample"
+     toc-max-level="3"
+     section-level="5"&gt;&lt;/div&gt;</code></pre>
+
+				</div>
+
+				<div class="table-wrap">
+
+					<table>
+
+						<thead>
+
+							<tr>
+								<th>属性</th>
+								<th>内容</th>
+								<th>既定値</th>
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							<tr>
+								<td><code class="blockquote-code">toc-title</code></td>
+								<td>目次のタイトル。この属性が目次を作る目印になります</td>
+								<td>目次</td>
+							</tr>
+
+							<tr>
+								<td><code class="blockquote-code">section-level</code></td>
+								<td>最初の番号の開始値</td>
+								<td>1</td>
+							</tr>
+
+							<tr>
+								<td><code class="blockquote-code">toc-max-level</code></td>
+								<td>目次に含める最も深い見出し（2〜6）</td>
+								<td>6</td>
+							</tr>
+
+							<tr>
+								<td><code class="blockquote-code">toc-target</code></td>
+								<td>見出しを探す範囲のCSSセレクタ</td>
+								<td>ページ全体</td>
+							</tr>
+
+							<tr>
+								<td><code class="blockquote-code">data-toc-ignore</code></td>
+								<td>見出し、またはその親要素に付けると目次から除外</td>
+								<td>-</td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</div>
+
+				<p class="text-small">
+					※ 属性は
+					<code class="blockquote-code">data-toc-title</code>
+					のように
+					<code class="blockquote-code">data-</code>
+					を付けても指定できます。
+					スクロールに合わせて現在の見出しが強調されます。
+					見出しを後から追加したときは
+					<code class="blockquote-code">Aster451.generateTOC()</code>
+					で再生成できます。
+				</p>
 
 			</div>
 
