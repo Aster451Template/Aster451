@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aster451 Template - テーマ一覧</title>
+	<link rel="stylesheet" href="https://aster451.aster451-template.workers.dev/aster451.css">
+	<script src="https://aster451.aster451-template.workers.dev/aster451.js" defer></script>
+
+	<style>
+		.theme-preview {
+			margin-bottom: 1rem;
+			border: 1px solid var(--pv-border);
+			border-radius: 6px;
+			background: var(--pv-bg);
+			color: var(--pv-text);
+			font-size: .85rem;
+			line-height: 1.5;
+			overflow: hidden;
+		}
+
+		.theme-preview {
+			font-family: var(--pv-main, inherit);
+		}
+
+		.theme-preview .pv-head,
+		.theme-preview .pv-title,
+		.theme-preview .pv-btn {
+			font-family: var(--pv-heading, var(--pv-main, inherit));
+		}
+
+		.theme-preview .pv-code {
+			display: inline-block;
+			margin-top: .6rem;
+			padding: .1rem .5rem;
+			border: 1px solid var(--pv-border);
+			border-radius: 4px;
+			background: transparent;
+			color: var(--pv-text);
+			font-family: var(--pv-mono, monospace);
+			font-size: .8rem;
+		}
+
+		.theme-preview .pv-head {
+			padding: .5rem .8rem;
+			border-bottom: 3px solid var(--pv-accent);
+			background: var(--pv-head);
+			color: var(--pv-headtext);
+			font-weight: 700;
+		}
+
+		.theme-preview .pv-body {
+			padding: .7rem .8rem .9rem;
+		}
+
+		.theme-preview .pv-title {
+			margin: 0 0 .3rem;
+			color: var(--pv-title);
+			font-size: 1rem;
+			font-weight: 700;
+		}
+
+		.theme-preview .pv-text {
+			margin: 0 0 .6rem;
+		}
+
+		.theme-preview .pv-btn {
+			display: inline-block;
+			padding: .15rem .8rem;
+			border-radius: 4px;
+			background: var(--pv-btn);
+			color: var(--pv-btntext);
+			font-weight: 700;
+		}
+
+		.theme-preview .pv-link {
+			margin-left: .9rem;
+			color: var(--pv-link);
+			text-decoration: underline;
+		}
+
+		.theme-meta {
+			margin: 0 0 1rem;
+			padding: 0;
+			list-style: none;
+			font-size: .92rem;
+		}
+
+		.theme-meta li {
+			margin: .15rem 0;
+		}
+
+		.chip {
+			display: inline-block;
+			width: 1.1em;
+			height: 1.1em;
+			margin-right: .3em;
+			border: 1px solid rgb(128 128 128 / 70%);
+			border-radius: 3px;
+			background: var(--c);
+			vertical-align: -.2em;
+		}
+	</style>
+</head>
+
+<body>
+
+	<a class="skip-link" href="#content">本文へスキップ</a>
+
+	<header>
+		<button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<h1>Aster451 Template</h1>
+	</header>
+
+	<div class="backdrop" id="backdrop"></div>
+
+	<nav class="drawer" id="drawer" aria-label="メニュー">
+
+		<h2 class="drawer-title">テーマ一覧</h2>
+
+		<ul>
+			<li>
+				<a href="#theme-aster451">Aster451(標準)</a>
+			</li>
+			<li>
+				<a href="#theme-dreamstyle">Dreamstyle</a>
+			</li>
+			<li>
+				<a href="#theme-caffemocha">Caffè Mocha</a>
+			</li>
+			<li>
+				<a href="#theme-nighttime-electricity">Nighttime Electricity</a>
+			</li>
+			<li>
+				<a href="#theme-supernova-remnant">Supernova Remnant</a>
+			</li>
+		</ul>
+
+		<h2 class="drawer-title">その他</h2>
+
+		<ul>
+			<li>
+				<a href="#compare">テーマの比較</a>
+			</li>
+			<li>
+				<a href="#switch">テーマの切り替え方</a>
+			</li>
+			<li>
+				<a href="#make">新しいテーマを作る</a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<main id="content">
+
+		<h1>テーマ一覧</h1>
+
+		<p class="text-small">
+			Accessible Styling &amp; Techniques for Expressive Representation Web-Template
+			- 451 Standard
+		</p>
+
+		<p>
+			Aster451 Templateで使える 5 つのテーマの一覧です。
+			どのテーマも同じHTMLのまま、CSSを差し替えるだけで切り替えられます。
+			カードのプレビューは、各テーマの見た目を小さく再現したものです。
+		</p>
+
+		<a class="button" href="https://aster451.aster451-template.workers.dev/">
+			→ Aster451 Template
+		</a>
+
+		<div class="toc" toc-title="目次" toc-target="#content"></div>
+
+		<!-- Theme List -->
+
+		<section id="themes">
+
+			<h2 class="theme-title">テーマ一覧</h2>
+
+			<p>
+				「ページを見る」で、そのテーマで表示した見本ページを開きます。
+			</p>
+
+			<div class="grid">
+
+				<article class="card" id="theme-aster451">
+
+					<h3>Aster451(標準)</h3>
+
+					<div class="theme-preview" aria-hidden="true" data-theme-css="aster451.css" data-heading-font="main"
+						style="--pv-bg:#f1f1f1;--pv-text:#091e05;--pv-head:#f1f1f1;--pv-headtext:#29274c;--pv-accent:#94849b;--pv-title:#7e52a0;--pv-btn:#29274c;--pv-btntext:#f1f1f1;--pv-link:#7e52a0;--pv-border:#cdcdcd">
+						<div class="pv-head">Aster451(標準)</div>
+						<div class="pv-body">
+							<p class="pv-title">見出しのサンプル</p>
+							<p class="pv-text">本文のサンプルです。読みやすさを確かめます。</p>
+							<span class="pv-btn">ボタン</span><span class="pv-link">リンク</span>
+							<code class="pv-code">code: 0123 {}</code>
+						</div>
+					</div>
+
+					<p>
+						紙のような読みやすさと親しみやすさを、現代のWebページ向けに組み直した標準テーマです。深いインディゴとアスターバイオレットを使っています。
+					</p>
+
+					<ul class="theme-meta">
+						<li><b>系統:</b> ライト</li>
+						<li><b>本文フォント:</b> <span data-font-name="main" data-css="aster451.css">Zen Old Mincho</span>
+						</li>
+						<li><b>文字と背景の比:</b> 約15:1</li>
+						<li><b>色:</b> <span class="chip" style="--c:#f1f1f1" title="#f1f1f1"></span><span class="chip"
+								style="--c:#29274c" title="#29274c"></span><span class="chip" style="--c:#7e52a0"
+								title="#7e52a0"></span><span class="chip" style="--c:#94849b" title="#94849b"></span>
+						</li>
+					</ul>
+
+					<p class="text-small" data-font-status="aster451.css" hidden></p>
+
+					<div class="flex">
+						<a class="button" href="index.html">
+							→ ページを見る
+						</a>
+						<a class="button button-outline" href="aster451.css">
+							CSS
+						</a>
+					</div>
+
+				</article>
+
+				<article class="card" id="theme-dreamstyle">
+
+					<h3>Dreamstyle</h3>
+
+					<div class="theme-preview" aria-hidden="true" data-theme-css="dreamstyle.css"
+						data-heading-font="main"
+						style="--pv-bg:#fbf7ff;--pv-text:#0d1033;--pv-head:#cfd7ff;--pv-headtext:#2b3485;--pv-accent:#2b3485;--pv-title:#6e2a67;--pv-btn:#cfd7ff;--pv-btntext:#2b3485;--pv-link:#2b3485;--pv-border:#2b3485">
+						<div class="pv-head">Dreamstyle</div>
+						<div class="pv-body">
+							<p class="pv-title">見出しのサンプル</p>
+							<p class="pv-text">本文のサンプルです。読みやすさを確かめます。</p>
+							<span class="pv-btn">ボタン</span><span class="pv-link">リンク</span>
+							<code class="pv-code">code: 0123 {}</code>
+						</div>
+					</div>
+
+					<p>
+						パステルカラーが主役のテーマです。文字・罫線・ボタンには深いインディゴとプラムを使い、適度なハイコントラストと少しの格式を持たせています。
+					</p>
+
+					<ul class="theme-meta">
+						<li><b>系統:</b> ライト(パステル)</li>
+						<li><b>本文フォント:</b> <span data-font-name="main" data-css="dreamstyle.css">Zen Old Mincho</span>
+						</li>
+						<li><b>文字と背景の比:</b> 約17:1</li>
+						<li><b>色:</b> <span class="chip" style="--c:#fbf7ff" title="#fbf7ff"></span><span class="chip"
+								style="--c:#8093f1" title="#8093f1"></span><span class="chip" style="--c:#fdc5f5"
+								title="#fdc5f5"></span><span class="chip" style="--c:#f7aef8" title="#f7aef8"></span>
+						</li>
+					</ul>
+
+					<p class="text-small" data-font-status="dreamstyle.css" hidden></p>
+
+					<div class="flex">
+						<a class="button" href="dreamstyle.html">
+							→ ページを見る
+						</a>
+						<a class="button button-outline" href="dreamstyle.css">
+							CSS
+						</a>
+					</div>
+
+				</article>
+
+				<article class="card" id="theme-caffemocha">
+
+					<h3>Caffè Mocha</h3>
+
+					<div class="theme-preview" aria-hidden="true" data-theme-css="caffemocha.css"
+						data-heading-font="gothic"
+						style="--pv-bg:#faf6f0;--pv-text:#2b1d14;--pv-head:#4a2c1c;--pv-headtext:#faf6f0;--pv-accent:#7a3f1d;--pv-title:#7a3f1d;--pv-btn:#4a2c1c;--pv-btntext:#faf6f0;--pv-link:#7a3f1d;--pv-border:#cdbba6">
+						<div class="pv-head">Caffè Mocha</div>
+						<div class="pv-body">
+							<p class="pv-title">見出しのサンプル</p>
+							<p class="pv-text">本文のサンプルです。読みやすさを確かめます。</p>
+							<span class="pv-btn">ボタン</span><span class="pv-link">リンク</span>
+							<code class="pv-code">code: 0123 {}</code>
+						</div>
+					</div>
+
+					<p>
+						オフィスのように落ち着いた配色の、読みやすさを重視したライトテーマです。ヘッダーにエスプレッソ色、差し色にキャラメル色を使っています。
+					</p>
+
+					<ul class="theme-meta">
+						<li><b>系統:</b> ライト(オフィス風)</li>
+						<li><b>本文フォント:</b> <span data-font-name="main" data-css="caffemocha.css">BIZ UDPGothic</span>
+						</li>
+						<li><b>文字と背景の比:</b> 約15:1</li>
+						<li><b>色:</b> <span class="chip" style="--c:#faf6f0" title="#faf6f0"></span><span class="chip"
+								style="--c:#4a2c1c" title="#4a2c1c"></span><span class="chip" style="--c:#7a3f1d"
+								title="#7a3f1d"></span><span class="chip" style="--c:#8a6446" title="#8a6446"></span>
+						</li>
+					</ul>
+
+					<p class="text-small" data-font-status="caffemocha.css" hidden></p>
+
+					<div class="flex">
+						<a class="button" href="caffemocha.html">
+							→ ページを見る
+						</a>
+						<a class="button button-outline" href="caffemocha.css">
+							CSS
+						</a>
+					</div>
+
+				</article>
+
+				<article class="card" id="theme-nighttime-electricity">
+
+					<h3>Nighttime Electricity</h3>
+
+					<div class="theme-preview" aria-hidden="true" data-theme-css="nighttimeelectricity.css"
+						data-heading-font="gothic"
+						style="--pv-bg:#05070f;--pv-text:#f2f6ff;--pv-head:#05070f;--pv-headtext:#3df2ff;--pv-accent:#3df2ff;--pv-title:#ffd400;--pv-btn:#3df2ff;--pv-btntext:#05070f;--pv-link:#ffd400;--pv-border:#3a4690">
+						<div class="pv-head">Nighttime Electricity</div>
+						<div class="pv-body">
+							<p class="pv-title">見出しのサンプル</p>
+							<p class="pv-text">本文のサンプルです。読みやすさを確かめます。</p>
+							<span class="pv-btn">ボタン</span><span class="pv-link">リンク</span>
+							<code class="pv-code">code: 0123 {}</code>
+						</div>
+					</div>
+
+					<p>
+						ほぼ黒の背景に、シアンとイエローの差し色を置いたダークテーマです。夜の画面でも読みやすいよう、コントラストを高くしています。
+					</p>
+
+					<ul class="theme-meta">
+						<li><b>系統:</b> ダーク(高コントラスト)</li>
+						<li><b>本文フォント:</b> <span data-font-name="main" data-css="nighttimeelectricity.css">IBM Plex Sans
+								JP</span></li>
+						<li><b>文字と背景の比:</b> 約19:1</li>
+						<li><b>色:</b> <span class="chip" style="--c:#05070f" title="#05070f"></span><span class="chip"
+								style="--c:#3df2ff" title="#3df2ff"></span><span class="chip" style="--c:#ffd400"
+								title="#ffd400"></span><span class="chip" style="--c:#6f55ff" title="#6f55ff"></span>
+						</li>
+					</ul>
+
+					<p class="text-small" data-font-status="nighttimeelectricity.css" hidden></p>
+
+					<div class="flex">
+						<a class="button" href="nighttimeelectricity.html">
+							→ ページを見る
+						</a>
+						<a class="button button-outline" href="nighttimeelectricity.css">
+							CSS
+						</a>
+					</div>
+
+				</article>
+
+				<article class="card" id="theme-supernova-remnant">
+
+					<h3>Supernova Remnant</h3>
+
+					<div class="theme-preview" aria-hidden="true" data-theme-css="supernovaremnant.css"
+						data-heading-font="gothic"
+						style="--pv-bg:#1a1b26;--pv-text:#c0caf5;--pv-head:#16161e;--pv-headtext:#7aa2f7;--pv-accent:#bb9af7;--pv-title:#ff9e64;--pv-btn:#7aa2f7;--pv-btntext:#1a1b26;--pv-link:#ff9e64;--pv-border:#3b4261">
+						<div class="pv-head">Supernova Remnant</div>
+						<div class="pv-body">
+							<p class="pv-title">見出しのサンプル</p>
+							<p class="pv-text">本文のサンプルです。読みやすさを確かめます。</p>
+							<span class="pv-btn">ボタン</span><span class="pv-link">リンク</span>
+							<code class="pv-code">code: 0123 {}</code>
+						</div>
+					</div>
+
+					<p>
+						Tokyo Night のような深い藍色の夜空に、超新星の残骸を思わせる青・紫・橙を差し色にしたダークテーマです。
+					</p>
+
+					<ul class="theme-meta">
+						<li><b>系統:</b> ダーク(Tokyo Night風)</li>
+						<li><b>本文フォント:</b> <span data-font-name="main" data-css="supernovaremnant.css">Noto Sans
+								JP</span></li>
+						<li><b>文字と背景の比:</b> 約11:1</li>
+						<li><b>色:</b> <span class="chip" style="--c:#1a1b26" title="#1a1b26"></span><span class="chip"
+								style="--c:#7aa2f7" title="#7aa2f7"></span><span class="chip" style="--c:#ff9e64"
+								title="#ff9e64"></span><span class="chip" style="--c:#bb9af7" title="#bb9af7"></span>
+						</li>
+					</ul>
+
+					<p class="text-small" data-font-status="supernovaremnant.css" hidden></p>
+
+					<div class="flex">
+						<a class="button" href="supernovaremnant.html">
+							→ ページを見る
+						</a>
+						<a class="button button-outline" href="supernovaremnant.css">
+							CSS
+						</a>
+					</div>
+
+				</article>
+
+			</div>
+
+		</section>
+
+		<hr>
+
+		<!-- Compare -->
+
+		<section id="compare">
+
+			<h2 class="theme-title">テーマの比較</h2>
+
+			<p>
+				色は、背景・第1色・第2色・第3色の順に並べています。
+				コントラスト比は、文字色と背景色から計算した値です。
+			</p>
+
+			<div class="table-wrap">
+
+				<table>
+
+					<thead>
+
+						<tr>
+							<th>テーマ</th>
+							<th>系統</th>
+							<th>色</th>
+							<th>文字と背景の比</th>
+							<th>フォント(本文 / 見出し / 等幅)</th>
+							<th>CSS</th>
+						</tr>
+
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<td><a href="#theme-aster451">Aster451(標準)</a></td>
+							<td>ライト</td>
+							<td><span class="chip" style="--c:#f1f1f1" title="#f1f1f1"></span><span class="chip"
+									style="--c:#29274c" title="#29274c"></span><span class="chip" style="--c:#7e52a0"
+									title="#7e52a0"></span><span class="chip" style="--c:#94849b"
+									title="#94849b"></span></td>
+							<td>15.5:1</td>
+							<td><span data-font-name="all" data-css="aster451.css">Zen Old Mincho / Noto Sans JP / IBM
+									Plex Mono</span></td>
+							<td><code class="blockquote-code">aster451.css</code></td>
+						</tr>
+
+						<tr>
+							<td><a href="#theme-dreamstyle">Dreamstyle</a></td>
+							<td>ライト(パステル)</td>
+							<td><span class="chip" style="--c:#fbf7ff" title="#fbf7ff"></span><span class="chip"
+									style="--c:#8093f1" title="#8093f1"></span><span class="chip" style="--c:#fdc5f5"
+									title="#fdc5f5"></span><span class="chip" style="--c:#f7aef8"
+									title="#f7aef8"></span></td>
+							<td>17.4:1</td>
+							<td><span data-font-name="all" data-css="dreamstyle.css">Zen Old Mincho / Noto Sans JP / IBM
+									Plex Mono</span></td>
+							<td><code class="blockquote-code">dreamstyle.css</code></td>
+						</tr>
+
+						<tr>
+							<td><a href="#theme-caffemocha">Caffè Mocha</a></td>
+							<td>ライト(オフィス風)</td>
+							<td><span class="chip" style="--c:#faf6f0" title="#faf6f0"></span><span class="chip"
+									style="--c:#4a2c1c" title="#4a2c1c"></span><span class="chip" style="--c:#7a3f1d"
+									title="#7a3f1d"></span><span class="chip" style="--c:#8a6446"
+									title="#8a6446"></span></td>
+							<td>15.1:1</td>
+							<td><span data-font-name="all" data-css="caffemocha.css">BIZ UDPGothic / Zen Kaku Gothic New
+									/ IBM Plex Mono</span></td>
+							<td><code class="blockquote-code">caffemocha.css</code></td>
+						</tr>
+
+						<tr>
+							<td><a href="#theme-nighttime-electricity">Nighttime Electricity</a></td>
+							<td>ダーク(高コントラスト)</td>
+							<td><span class="chip" style="--c:#05070f" title="#05070f"></span><span class="chip"
+									style="--c:#3df2ff" title="#3df2ff"></span><span class="chip" style="--c:#ffd400"
+									title="#ffd400"></span><span class="chip" style="--c:#6f55ff"
+									title="#6f55ff"></span></td>
+							<td>18.6:1</td>
+							<td><span data-font-name="all" data-css="nighttimeelectricity.css">IBM Plex Sans JP / Chakra
+									Petch / JetBrains Mono</span></td>
+							<td><code class="blockquote-code">nighttimeelectricity.css</code></td>
+						</tr>
+
+						<tr>
+							<td><a href="#theme-supernova-remnant">Supernova Remnant</a></td>
+							<td>ダーク(Tokyo Night風)</td>
+							<td><span class="chip" style="--c:#1a1b26" title="#1a1b26"></span><span class="chip"
+									style="--c:#7aa2f7" title="#7aa2f7"></span><span class="chip" style="--c:#ff9e64"
+									title="#ff9e64"></span><span class="chip" style="--c:#bb9af7"
+									title="#bb9af7"></span></td>
+							<td>10.6:1</td>
+							<td><span data-font-name="all" data-css="supernovaremnant.css">Noto Sans JP / Space Grotesk
+									/ Fira Code</span></td>
+							<td><code class="blockquote-code">supernovaremnant.css</code></td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+			<p class="text-small">
+				※ 全テーマで、グラデーションは使わず、目次・タブ・ハンバーガーメニューなどの部品が共通のクラス名で使えます。
+			</p>
+
+		</section>
+
+		<hr>
+
+		<!-- Switch -->
+
+		<section id="switch">
+
+			<h2 class="theme-title">テーマの切り替え方</h2>
+
+			<p>
+				HTMLは変えず、<code class="blockquote-code">&lt;head&gt;</code> のCSSの指定を差し替えます。
+				JavaScript(<code class="blockquote-code">aster451.js</code>)は、どのテーマでも共通です。
+			</p>
+
+			<div class="example">
+
+				<div class="demo">
+					<p>
+						たとえば Caffè Mocha に切り替える場合
+					</p>
+				</div>
+
+				<pre class="blockquote-code"><code>&lt;link rel="stylesheet" href="https://aster451.aster451-template.workers.dev/caffemocha.css"&gt;
+&lt;script src="https://aster451.aster451-template.workers.dev/aster451.js" defer&gt;&lt;/script&gt;</code></pre>
+
+			</div>
+
+			<div class="alert alert-info" role="status">
+				<strong>公開先を使う場合</strong>
+				CSSとJSを公開先のURLから読み込んでいるときは、公開先のファイルも、目次に対応した新しい版に更新してください。
+				古いままだと、目次が動かなかったり、スタイルが付かなかったりします。
+			</div>
+
+		</section>
+
+		<hr>
+
+		<!-- Make -->
+
+		<section id="make">
+
+			<h2 class="theme-title">新しいテーマを作る</h2>
+
+			<p>
+				新しいテーマは、<code class="blockquote-code">aster451.css</code> を複製して作ります。
+				見た目の大半は、先頭の <code class="blockquote-code">:root</code> にあるテーマ変数で決まります。
+			</p>
+
+			<div class="table-wrap">
+
+				<table>
+
+					<thead>
+
+						<tr>
+							<th>変数</th>
+							<th>役割</th>
+						</tr>
+
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<td><code class="blockquote-code">--background-color</code> / <code
+									class="blockquote-code">--surface-color</code></td>
+							<td>ページ全体の背景と、カードなどの面の色</td>
+						</tr>
+
+						<tr>
+							<td><code class="blockquote-code">--text-color</code> / <code
+									class="blockquote-code">--muted-color</code></td>
+							<td>本文の色と、補助的な文字の色</td>
+						</tr>
+
+						<tr>
+							<td><code class="blockquote-code">--first-color</code> / <code
+									class="blockquote-code">--second-color</code> / <code
+									class="blockquote-code">--third-color</code></td>
+							<td>見出し・ボタン・リンク・枠線に使う3つの差し色</td>
+						</tr>
+
+						<tr>
+							<td><code class="blockquote-code">--main-font</code> / <code
+									class="blockquote-code">--gothic-font</code> / <code
+									class="blockquote-code">--monotype-font</code></td>
+							<td>本文、見出し、等幅のフォント</td>
+						</tr>
+
+						<tr>
+							<td><code class="blockquote-code">--toc-accent</code></td>
+							<td>目次の番号と強調に使う色(既定は <code class="blockquote-code">--second-color</code>)</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+			<div class="alert alert-warning" role="alert">
+				<strong>文字色の選び方</strong>
+				淡い色を文字に使うと読みにくくなります。
+				淡い色は背景の面に使い、文字や枠線には深い色を、
+				明るい色を面に使うときは、その上の文字を暗い色にしてください。
+			</div>
+
+		</section>
+
+	</main>
+
+	<footer>
+		<small>
+			Aster451 Template &copy;2026- <a href="https://aster451.aster451-template.workers.dev/">Aster451
+				Template</a>
+		</small>
+		<small>
+			<b>Questions:</b> <a href="mailto://aster451.template@protonmail.com">E-mail</a> / <b>Issues:</b> <a
+				href="https://github.com/Aster451Template/Aster451/issues">GitHub</a>
+		</small>
+	</footer>
+
+	<script>
+		// 各テーマのCSSを読み取り、フォントをプレビューに反映する
+		// - @import で指定された Google Fonts を読み込む
+		// - --main-font / --gothic-font / --monotype-font を取り出して適用する
+		// ※ CSSを fetch するため、HTTP(S) で開いた場合に動作します
+
+		(async function () {
+
+			const FONT_HOST = 'https://fonts.googleapis.com/';
+			const loaded = new Set();
+
+			function loadFont(url) {
+
+				// Google Fonts 以外は読み込まない
+				if (!url.startsWith(FONT_HOST) || loaded.has(url)) {
+					return;
+				}
+
+				loaded.add(url);
+
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.href = url;
+				document.head.appendChild(link);
+
+			}
+
+			function readToken(css, name) {
+
+				const match = css.match(new RegExp(name + '\\s*:\\s*([^;]+);'));
+
+				return match ? match[1].trim() : '';
+
+			}
+
+			// 'Zen Old Mincho', 'Hiragino Mincho ProN', ... → Zen Old Mincho
+			function firstFamily(stack) {
+
+				return stack.split(',')[0].trim().replace(/^['"]|['"]$/g, '');
+
+			}
+
+			async function readTheme(cssUrl) {
+
+				const response = await fetch(cssUrl);
+
+				if (!response.ok) {
+					throw new Error(cssUrl + ': HTTP ' + response.status);
+				}
+
+				const css = await response.text();
+
+				[...css.matchAll(/@import\s+url\(\s*['"]?([^'")]+)['"]?\s*\)/g)]
+					.forEach(match => loadFont(match[1]));
+
+				return {
+					main: readToken(css, '--main-font'),
+					gothic: readToken(css, '--gothic-font'),
+					mono: readToken(css, '--monotype-font')
+				};
+
+			}
+
+			const urls = [...new Set(
+				[...document.querySelectorAll('[data-theme-css]')]
+					.map(element => element.dataset.themeCss)
+			)];
+
+			await Promise.all(urls.map(async url => {
+
+				try {
+
+					const fonts = await readTheme(url);
+
+					// プレビューに適用
+					document.querySelectorAll('[data-theme-css="' + url + '"]').forEach(preview => {
+
+						const heading =
+							preview.dataset.headingFont === 'gothic'
+								? fonts.gothic
+								: fonts.main;
+
+						if (fonts.main) preview.style.setProperty('--pv-main', fonts.main);
+						if (heading) preview.style.setProperty('--pv-heading', heading);
+						if (fonts.mono) preview.style.setProperty('--pv-mono', fonts.mono);
+
+					});
+
+					// フォント名の表示をCSSの内容に合わせる
+					document.querySelectorAll('[data-font-name][data-css="' + url + '"]').forEach(label => {
+
+						const names = label.dataset.fontName === 'all'
+							? [fonts.main, fonts.gothic, fonts.mono]
+							: [fonts[label.dataset.fontName]];
+
+						const text = names
+							.filter(Boolean)
+							.map(firstFamily)
+							.join(' / ');
+
+						if (text) {
+							label.textContent = text;
+						}
+
+					});
+
+				} catch (error) {
+
+					console.warn(error);
+
+					const status = document.querySelector('[data-font-status="' + url + '"]');
+
+					if (status) {
+						status.hidden = false;
+						status.textContent =
+							'CSSを読み込めなかったため、フォントは反映されていません。';
+					}
+
+				}
+
+			}));
+
+		})();
+	</script>
+
+</body>
+
+</html>
